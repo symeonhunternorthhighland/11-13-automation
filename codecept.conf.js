@@ -81,5 +81,5 @@ exports.config = {
     },
   },
   tests: "./features/**/*.feature",
-  name: "{{PROJECT_NAME}}",
+  name: "{{automation11/13}}",
 };
