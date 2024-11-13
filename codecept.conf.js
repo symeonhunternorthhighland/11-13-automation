@@ -7,7 +7,7 @@ const build = process.env.BROWSERSTACK_BUILD_NAME;
 exports.config = {
   helpers: {
     WebDriver: {
-      url: "{{BASE_URL}}",
+      url: "{{http:www.facebook.com}}",
       //MicrosoftEdge//firefox//chrome
       browser: "chrome",
       restart: true,
