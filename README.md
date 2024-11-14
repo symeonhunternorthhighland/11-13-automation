@@ -1,4 +1,4 @@
-# Automated Testing Template
+# Automated Testing Template.
 
 ## Purpose
 
