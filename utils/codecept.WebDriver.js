@@ -1,3 +1,4 @@
+
 const TestHelper = require('../support/TestHelper');
 
 module.exports.config = {
