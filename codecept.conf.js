@@ -13,16 +13,19 @@ exports.config = {
       restart: true,
       user:_user,
       key: _key,
-      windowSize: "maximize",
+      windowSize: "maximize",  //maximizes the window size
       waitForTimeout: 10000,
       waitForElement: 5000,
       smartWait: 5000,
       waitForText: 5000,
       waitForInvisible: 10000,
       fullPageScreenshots: true, //full page screenshots on failure
+      uniqueScreenshots: true, //prevents screenshot overrides if scenarios have same name
       timeouts: {
         "page load": 6000   //gives each page 6 seconds to load
       }
+      chromeOptions: {
+        args: [ "--headless", "--disable-gpu", "--no-sandbx" ] // runs chrome in headless mode
       desiredCapabilities: {
         ...(process.env.profile === "remote" && {
           buildName: process.env.BROWSERSTACK_BUILD_NAME,
