@@ -12,6 +12,7 @@ exports.config = {
       browser: "chrome",
       restart: true,
       //keepCookies:true, // save session information in cookies. May or may not delete later!!!!
+      //keepBrowserState: false, //change browser state.   May or may not delete later!!!!
       user:_user,
       key: _key,
       windowSize: "maximize",  //maximizes the window size
@@ -27,6 +28,8 @@ exports.config = {
       }
       chromeOptions: {
         args: [ "--headless", "--disable-gpu", "--no-sandbx" ] // runs chrome in headless mode
+        //args: [ /*"--headless",*/ "--disable-gpu", "--no-sandbox" ] //another way to run in headless mode
+        //will delete one or both options depending on our direction.
       desiredCapabilities: {
         ...(process.env.profile === "remote" && {
           buildName: process.env.BROWSERSTACK_BUILD_NAME,
