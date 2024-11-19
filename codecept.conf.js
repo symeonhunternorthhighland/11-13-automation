@@ -11,6 +11,7 @@ exports.config = {
       //MicrosoftEdge//firefox//chrome
       browser: "chrome",
       restart: true,
+      keepCookies:true, // save session information in cookies. May delete later!!!!
       user:_user,
       key: _key,
       windowSize: "maximize",  //maximizes the window size
