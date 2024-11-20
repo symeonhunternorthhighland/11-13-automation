@@ -26,15 +26,7 @@ exports.config = {
       timeouts: {
         "page load": 6000   //gives each page 6 seconds to load
       }
-      chromeOptions: {
-        args: [ "--headless", "--disable-gpu", "--no-sandbx" ] // runs chrome in headless mode
-        //args: [ /*"--headless",*/ "--disable-gpu", "--no-sandbox" ] //another way to run in headless mode
-        //will delete one or both options depending on our direction.
-      desiredCapabilities: {
-        ...(process.env.profile === "remote" && {
-          buildName: process.env.BROWSERSTACK_BUILD_NAME,
-        }), 
-      },
+      
     },
     BrowserStackSession: {
       require: "./utils/browserstack_session.js",
