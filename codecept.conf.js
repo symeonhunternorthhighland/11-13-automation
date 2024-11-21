@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config({ path: '.env' });
 const _user = (process.env.profile === "remote") ? process.env.BROWSERSTACK_USERNAME : undefined
 
 const _key = (process.env.profile === "remote") ? process.env.BROWSERSTACK_ACCESS_KEY : undefined
