@@ -1,8 +1,8 @@
-# Automated Testing Template.
+
 
 ## Purpose
 
-The purpose of this repo is to create a template for quick deployment of North Highland's Automation Solution
+The purpose of this repo is to create a template for quick deployment of North Highland's Automation Solution.
 
 ### Run tests
 

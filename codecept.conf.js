@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config({ path: '.env' });
 const _user = (process.env.profile === "remote") ? process.env.BROWSERSTACK_USERNAME : undefined
 
 const _key = (process.env.profile === "remote") ? process.env.BROWSERSTACK_ACCESS_KEY : undefined
@@ -7,23 +7,26 @@ const build = process.env.BROWSERSTACK_BUILD_NAME;
 exports.config = {
   helpers: {
     WebDriver: {
-      url: "{{http:www.facebook.com}}",
+      url: "{{http://www.facebook.com}}",
       //MicrosoftEdge//firefox//chrome
       browser: "chrome",
       restart: true,
+      //keepCookies:true, // save session information in cookies. May or may not delete later!!!!
+      //keepBrowserState: false, //change browser state.   May or may not delete later!!!!
       user:_user,
       key: _key,
-      windowSize: "1920x1680",
+      windowSize: "maximize",  //maximizes the window size
       waitForTimeout: 10000,
       waitForElement: 5000,
       smartWait: 5000,
       waitForText: 5000,
       waitForInvisible: 10000,
-      desiredCapabilities: {
-        ...(process.env.profile === "remote" && {
-          buildName: process.env.BROWSERSTACK_BUILD_NAME,
-        }), 
-      },
+      fullPageScreenshots: true, //full page screenshots on failure
+      uniqueScreenshots: true, //prevents screenshot overrides if scenarios have same name
+      timeouts: {
+        "page load": 6000   //gives each page 6 seconds to load
+      }
+      
     },
     BrowserStackSession: {
       require: "./utils/browserstack_session.js",
